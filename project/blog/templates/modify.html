@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="{% url 'modified' selectedItem.id%}">
+            {% csrf_token %}
+                <div>
+                    제목 <br>
+                    <input type="text" name="modify_title" value={{selectedItem.title}}>
+                </div>
+                <div style="margin-top: 50px">
+                    내용 <br>
+                    <textarea name="modify_body" id="" cols="30" rows="10">{{selectedItem.body}}</textarea>
+                </div>
+                <input type="submit" value="등록">
+            </form>
+</body>
+</html>
